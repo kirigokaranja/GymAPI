@@ -24,7 +24,7 @@ class CreateGymInstructorsTable extends Migration
             $table->integer('gym_id');
             $table->timestamps();
 
-            $table->foreign('gym_id')->references('id')->on('gym_details_95006');
+            $table->foreign('gym_id')->references('id')->on('gym_95006');
         });
     }
 

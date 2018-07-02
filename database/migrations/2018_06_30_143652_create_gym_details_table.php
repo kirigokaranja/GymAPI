@@ -13,7 +13,7 @@ class CreateGymDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('gym_details_95006', function (Blueprint $table) {
+        Schema::create('gym_95006', function (Blueprint $table) {
             $table->increments('id');
             $table->string('gym_name');
             $table->time('opening_time');
@@ -31,6 +31,6 @@ class CreateGymDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gym_details_95006');
+        Schema::dropIfExists('gym_95006');
     }
 }
