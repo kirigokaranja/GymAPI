@@ -41,14 +41,14 @@ class RegisterController extends Controller
 
          if ($user->save()){
              $response = [
-                 'status' => 'success',
-                 'message' => 'it worked',
+                 'status' => true,
+                 'message' => 'Registration Successful',
                  'user' => $user
              ];
          }else{
              $response = [
-                 'status' => 'fail',
-                 'message' => 'Noooooooooo'
+                 'status' => false,
+                 'message' => 'Registration Unsuccessful'
              ];
          }
 
@@ -57,7 +57,6 @@ class RegisterController extends Controller
     }
 
     public function login(Request $request){
-
         $user = new User();
         $email = $request->input('email');
         $password = $request->input('password');
