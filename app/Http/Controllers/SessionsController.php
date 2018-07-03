@@ -15,7 +15,7 @@ class SessionsController extends Controller
         $workout->exercise_name = request('exname');
         $workout->reps = request('reps');
         $workout->sets = request('sets');
-        $workout->status = "done";
+        $workout->status = request('location');
         $workout->user_id = request('user_id');
         $workout->save();
 
