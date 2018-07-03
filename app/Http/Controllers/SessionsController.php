@@ -34,4 +34,11 @@ class SessionsController extends Controller
 
         return response()->json($response);
     }
+
+    public function WorkoutDetails($user_id){
+
+        $workout = Session::find($user_id->user_id);
+        return response()->json($workout);
+
+    }
 }

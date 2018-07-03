@@ -32,3 +32,6 @@ Route::post('instructors', 'GymInstructorsController@addInstructor');
 
 //add session
 Route::post('session', 'SessionsController@addworkout');
+
+//show session for specific user
+Route::get('workoutDetails/{id}', 'SessionsController@WorkoutDetails');
