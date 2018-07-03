@@ -6,6 +6,7 @@ use App\GymInstructors;
 use App\GymLocation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class GymInstructorsController extends Controller
 {
@@ -25,7 +26,7 @@ class GymInstructorsController extends Controller
         $instructor->image = request('photo');
         $instructor->gender = request('gender');
         $instructor->bio = request('bio');
-        $instructor->gym_id('gym_id');
+        $instructor->gym_id = request('gym_id');
         $instructor->save();
 
         if ($instructor->save()){
@@ -42,6 +43,35 @@ class GymInstructorsController extends Controller
         }
 
         return response()->json($response);
+    }
+
+    public function Instructor(Request $request){
+
+        $instructor = new GymInstructors();
+        $instructor->name = request('name');
+        $instructor->contact = request('contact');
+        $instructor->email = request('email');
+        $instructor->image = request('photo');
+        $instructor->gender = request('gender');
+        $instructor->bio = request('bio');
+        $instructor->gym_id = request('gym_id');
+        $instructor->save();
+
+        if ($instructor->save()){
+            $response = [
+                'status' => true,
+                'message' => 'Registration Successful',
+                'user' => $instructor
+            ];
+        }else{
+            $response = [
+                'status' => false,
+                'message' => 'Registration Unsuccessful'
+            ];
+        }
+
+        return response()->json($response);
+
     }
 
     public function instructorDetails(){
