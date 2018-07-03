@@ -29,3 +29,6 @@ Route::get('instructors', 'GymInstructorsController@instructorDetails');
 
 //add instructor
 Route::post('instructors', 'GymInstructorsController@addInstructor');
+
+//add session
+Route::post('session', 'SessionsController@addworkout');
