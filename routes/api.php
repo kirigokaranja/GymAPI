@@ -17,3 +17,5 @@ Route::middleware('auth:api')->group(function () {
 });
 
 Route::post('register', 'RegisterController@register');
+
+Route::post('login', 'RegisterController@login');
