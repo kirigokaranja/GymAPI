@@ -16,7 +16,7 @@ class GymInstructorsController extends Controller
         return view('instructor', ['fees' => $fees]);
     }
 
-    public function addInstructor(){
+    public function addInstructor(Request $request){
 
         $instructor = new GymInstructors();
         $instructor->name = request('name');
