@@ -18,4 +18,4 @@ Route::get('/', function () {
 Route::get('/user','RegisterController@show');
 Route::get('/instructor','GymInstructorsController@show');
 Route::post('/register', 'RegisterController@register');
-Route::post('/instructor', 'GymInstructorsController@addInstructor');
+Route::post('/instructors', 'GymInstructorsController@addInstructor');
