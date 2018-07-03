@@ -91,4 +91,10 @@ class RegisterController extends Controller
 
     }
 
+    public function getUserDetails($userId){
+
+        $user = User::find($userId);
+        return response()->json($user);
+    }
+
 }

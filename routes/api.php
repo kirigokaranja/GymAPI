@@ -22,4 +22,4 @@ Route::post('register', 'RegisterController@register');
 Route::post('login', 'RegisterController@login');
 
 //retrieve user details
-Route::get('userDetails/{id}', 'ProfileController@getUserDetails');
+Route::get('userDetails/{id}', 'PRegisterController@getUserDetails');
