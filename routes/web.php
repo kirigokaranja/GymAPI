@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/user','RegisterController@show');
+Route::get('/instructor','RGymInstructorsController@show');
 Route::post('/register', 'RegisterController@register');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\GymInstructors;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -27,7 +28,7 @@ class RegisterController extends Controller
 
             $response = [
                 'status' => false,
-                'message' =>$Validate->errors()
+                'message' =>$validated->errors()
             ];
             return response()->json($response);
         }
@@ -96,5 +97,7 @@ class RegisterController extends Controller
         $user = User::find($userId);
         return response()->json($user);
     }
+
+
 
 }

@@ -1,14 +1,14 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Shron
- * Date: 6/9/2018
- * Time: 11:16 AM
+ * User: kirigo karanja
+ * Date: 03/07/2018
+ * Time: 22:14
  */
 ?>
 <html>
 <head>
-    <title>Users Information</title>
+    <title>Instructor Information</title>
     <style>
         body {
             background: #000033;
@@ -63,19 +63,23 @@
 <body>
 <table>
     <tr>
-        <th>User Id</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Instructor Id</th>
+        <th>Name</th>
+        <th>Contact</th>
         <th>Email</th>
-        <th>Password</th>
+        <th>Image</th>
+        <th>Gender</th>
+        <th>Bio</th>
     </tr>
     @foreach ($fees as $fee)
         <tr>
             <td>{{$fee->id}}</td>
-            <td>{{$fee->first_name}}</td>
-            <td>{{$fee->last_name}}</td>
+            <td>{{$fee->name}}</td>
+            <td>{{$fee->contact}}</td>
             <td>{{$fee->email}}</td>
-            <td>{{$fee->password}}</td>
+            <td>{{$fee->image}}</td>
+            <td>{{$fee->gender}}</td>
+            <td>{{$fee->bio}}</td>
 
             {{--<td>{{$student->firstName}}</td>--}}
         </tr>
