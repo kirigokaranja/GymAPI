@@ -80,7 +80,6 @@
             {{--<td>{{$student->firstName}}</td>--}}
         </tr>
     @endforeach
-    <h3>TOTAL: Ksh {{$total}}</h3>
 
 </table>
 </body>

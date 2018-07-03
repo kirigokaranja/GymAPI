@@ -20,7 +20,7 @@ class CreateGymLocationsTable extends Migration
             $table->float('longitude');
             $table->timestamps();
 
-            $table->foreign('gym_id')->references('id')->on('gym_95006');
+//            $table->foreign('gym_id')->references('id')->on('gym_95006');
         });
     }
 

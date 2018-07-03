@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use function PHPSTORM_META\elementType;
 
 class RegisterController extends Controller
 {
@@ -17,22 +18,36 @@ class RegisterController extends Controller
 
      public function register(Request $request){
 
-    $this->validate($request,[
+//    $this->validate($request,[
+//
+//        'name' =>'required',
+//        'email' => 'required|email|unique:users,email',
+//        'password' =>'required|min:6|confirmed'
+//
+//    ]);
 
-        'name' =>'required',
-        'email' => 'required|email|unique:users,email',
-        'password' =>'required|min:6|confirmed'
+         $user = new User();
+         $user->first_name = request('first_name');
+         $user->last_name = request('last_name');
+         $user->email = request('email');
+         $user->password = Hash::make(request('password')) ;
+         $user->save();
 
-    ]);
+         if ($user->save()){
+             $response = [
+                 'status' => 'success',
+                 'message' => 'it worked',
+                 'user' => $user
+             ];
+         }else{
+             $response = [
+                 'status' => 'fail',
+                 'message' => 'Noooooooooo'
+             ];
+         }
 
-    $user = User::create([
-
-        'first_name' => request('first_name'),
-        'last_name' => request('last_name'),
-        'email' => request('email'),
-        'password' => Hash::make(request('password'))
-
-    ]);
+         return response()->json($response);
 
     }
+
 }
