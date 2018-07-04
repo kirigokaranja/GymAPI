@@ -59,8 +59,8 @@ class RegisterController extends Controller
 
     public function login(Request $request){
         $user = new User();
-        $email = $request->input('email');
-        $password = $request->input('password');
+        $email = request('email');
+        $password = request('password');
         $user['email'] = $email;
 
         if ($user = User::where('email', '=', $email)->first()){
