@@ -35,3 +35,6 @@ Route::post('session', 'SessionsController@addworkout');
 
 //show session for specific user
 Route::get('workoutDetails/{id}', 'SessionsController@WorkoutDetails');
+
+//show all sessions
+Route::get('allsessions', 'SessionsController@instructorDetails');

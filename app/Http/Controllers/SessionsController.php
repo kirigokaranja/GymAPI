@@ -37,9 +37,18 @@ class SessionsController extends Controller
 
     public function WorkoutDetails($user_id){
 
-        $workout = Session::all();
-        $workout = Session::find($user_id->user_id);
+        $workout = Session::where('user_id', $user_id)->get();
         return response()->json($workout);
 
+    }
+
+    public function allDetails(){
+
+        $workout = Session::all();
+
+        $workout = [
+            "workout" => $workout,
+        ];
+        return response()->json($workout);
     }
 }
