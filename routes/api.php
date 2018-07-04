@@ -27,14 +27,16 @@ Route::get('userDetails/{id}', 'RegisterController@getUserDetails');
 //show all gym instructor details
 Route::get('instructors', 'GymInstructorsController@instructorDetails');
 
-//add instructor
+//add instructor details
 Route::post('instructors', 'GymInstructorsController@addInstructor');
 
-//add session
+//add session details
 Route::post('session', 'SessionsController@addworkout');
 
 //show session for specific user
 Route::get('workoutDetails/{id}', 'SessionsController@WorkoutDetails');
 
-//show all sessions
-Route::get('allsessions', 'SessionsController@instructorDetails');
+//show all sessions details
+Route::get('allsessions', 'SessionsController@allDetails');
+
+//add u

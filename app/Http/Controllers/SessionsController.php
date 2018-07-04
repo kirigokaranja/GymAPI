@@ -38,6 +38,10 @@ class SessionsController extends Controller
     public function WorkoutDetails($user_id){
 
         $workout = Session::where('user_id', $user_id)->get();
+
+        $workout = [
+            "workout" => $workout,
+        ];
         return response()->json($workout);
 
     }
