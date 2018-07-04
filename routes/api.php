@@ -39,4 +39,6 @@ Route::get('workoutDetails/{id}', 'SessionsController@WorkoutDetails');
 //show all sessions details
 Route::get('allsessions', 'SessionsController@allDetails');
 
+//add gym details
+Route::post('gym', 'GymDetailsController@addgym');
 //add user profile
