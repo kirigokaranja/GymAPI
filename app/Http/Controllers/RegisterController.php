@@ -47,6 +47,13 @@ class RegisterController extends Controller
              $id = $user->id;
              $profile= new Profile();
              $profile->user_id = $id;
+             $profile->profilePhoto ='profilePhoto';
+             $profile->dob = '10/11/1997';
+             $profile->gender = 'gender';
+             $profile->weight = 'weight';
+             $profile->desired_weight = 'desired_weight';
+             $profile->height = 'height';
+             $profile->homegym = '0';
              $profile->save();
 
              $response = [
