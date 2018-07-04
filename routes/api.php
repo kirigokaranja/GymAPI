@@ -39,4 +39,4 @@ Route::get('workoutDetails/{id}', 'SessionsController@WorkoutDetails');
 //show all sessions details
 Route::get('allsessions', 'SessionsController@allDetails');
 
-//add u
+//add user profile

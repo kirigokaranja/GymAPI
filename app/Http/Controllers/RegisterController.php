@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\GymInstructors;
+use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -42,6 +43,12 @@ class RegisterController extends Controller
          $user->save();
 
          if ($user->save()){
+
+             $id = $user->id;
+             $profile= new Profile();
+             $profile->user_id = $id;
+             $profile->save();
+
              $response = [
                  'status' => true,
                  'message' => 'Registration Successful',
