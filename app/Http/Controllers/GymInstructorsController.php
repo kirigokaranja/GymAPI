@@ -55,4 +55,47 @@ class GymInstructorsController extends Controller
         ];
         return response()->json($instructor);
     }
+
+
+    public function addgym(){
+
+
+        $details = new GymDetail();
+        $details->gym_name = request('gym_name');
+        $details->opening_time = request('opening_time');
+        $details->closing_time = request('closing_time');
+        $details->latitude = request('latitude');
+        $details->longitude = request('longitude') ;
+        $details->save();
+
+
+        if ($details->save()){
+
+
+
+            $response = [
+                'status' => true,
+                'message' => 'Gym Added Successful',
+                'user' => $details
+            ];
+        }else{
+            $response = [
+                'status' => false,
+                'message' => ' Unsuccessful'
+            ];
+        }
+
+        return response()->json($response);
+    }
+
+    public function showgym(){
+
+        $details = GymDetail::all();
+
+        $details = [
+            "details" => $details,
+        ];
+        return response()->json($details);
+    }
+
 }

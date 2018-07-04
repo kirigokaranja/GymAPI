@@ -47,6 +47,6 @@ class GymDetailsController extends Controller
         $details = [
             "details" => $details,
         ];
-        return response()->json($instructor);
+        return response()->json($details);
     }
 }
