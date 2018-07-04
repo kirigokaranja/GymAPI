@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\GymDetail;
 use App\GymInstructors;
 use App\GymLocation;
 use Illuminate\Http\Request;
