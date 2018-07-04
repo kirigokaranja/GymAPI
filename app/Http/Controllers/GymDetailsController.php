@@ -39,4 +39,14 @@ class GymDetailsController extends Controller
 
         return response()->json($response);
 }
+
+    public function showgym(){
+
+        $details = GymDetail::all();
+
+        $details = [
+            "details" => $details,
+        ];
+        return response()->json($instructor);
+    }
 }
