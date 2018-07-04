@@ -17,7 +17,7 @@ class CreateGymDetailsTable extends Migration
             $table->increments('id');
             $table->string('gym_name');
             $table->time('opening_time');
-            $table->time('closing time');
+            $table->time('closing_time');
             $table->float('latitude');
             $table->float('longitude');
             $table->timestamps();

@@ -42,19 +42,21 @@ class RegisterController extends Controller
          $user->password = Hash::make(request('password')) ;
          $user->save();
 
-         if ($user->save()){
+         $id = $user->id;
+         $profile= new Profile();
+         $profile->user_id = $id;
+         $profile->profilePhoto ='profilePhoto';
+         $profile->dob = '10/11/1997';
+         $profile->gender = 'gender';
+         $profile->weight = 'weight';
+         $profile->desired_weight = 'desired_weight';
+         $profile->height = 'height';
+         $profile->homegym = '1';
+         $profile->save();
 
-             $id = $user->id;
-             $profile= new Profile();
-             $profile->user_id = $id;
-             $profile->profilePhoto ='profilePhoto';
-             $profile->dob = '10/11/1997';
-             $profile->gender = 'gender';
-             $profile->weight = 'weight';
-             $profile->desired_weight = 'desired_weight';
-             $profile->height = 'height';
-             $profile->homegym = '1';
-             $profile->save();
+         if ($user->save() && $profile->save()){
+
+
 
              $response = [
                  'status' => true,
