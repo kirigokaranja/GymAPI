@@ -45,4 +45,8 @@ Route::post('gym', 'GymInstructorsController@addgym');
 //show all gym details
 Route::get('gym', 'GymInstructorsController@showgym');
 
-//add user profile
+//show specific gym details
+Route::get('gym/{id}', 'GymInstructorsController@gymDetails');
+
+//update user profile
+Route::post('user/{id}', 'RegisterController@updateProfile');

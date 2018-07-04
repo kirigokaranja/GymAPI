@@ -115,6 +115,34 @@ class RegisterController extends Controller
         return response()->json($user);
     }
 
+    public function updateProfile($userId){
 
+        $profile = Profile::find($userId);
+        $profile->profilePhoto = request('profilePhoto');
+        $profile->dob = request('dob');
+        $profile->gender = request('gender');
+        $profile->weight = request('weight');
+        $profile->desired_weight = request('desired_weight');
+        $profile->height = request('height');
+        $profile->homegym = request('homegym');
+        $profile->save();
+
+        if ($profile->save()){
+
+            $response = [
+                'status' => true,
+                'message' => 'Update Successful',
+                'user' => $profile
+            ];
+        }else{
+            $response = [
+                'status' => false,
+                'message' => 'Update Unsuccessful'
+            ];
+        }
+
+        return response()->json($response);
+
+    }
 
 }

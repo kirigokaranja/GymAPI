@@ -99,4 +99,16 @@ class GymInstructorsController extends Controller
         return response()->json($details);
     }
 
+    public function gymDetails($gym_id){
+
+        $gym = GymDetail::where('id', $gym_id)->get();
+
+        $gym = [
+
+            "gym" => $gym,
+        ];
+        return response()->json($gym);
+
+    }
+
 }
