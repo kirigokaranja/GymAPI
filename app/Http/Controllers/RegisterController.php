@@ -35,7 +35,6 @@ class RegisterController extends Controller
         }
 
          $user = new User();
-         $user->remember_token = "0";
          $user->first_name = request('first_name');
          $user->last_name = request('last_name');
          $user->email = request('email');
