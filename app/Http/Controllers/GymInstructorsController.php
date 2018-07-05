@@ -51,7 +51,7 @@ class GymInstructorsController extends Controller
 
         $instructor = GymInstructors::all();
 
-       
+
         return response()->json($instructor);
     }
 
@@ -90,10 +90,6 @@ class GymInstructorsController extends Controller
     public function showgym(){
 
         $details = GymDetail::all();
-
-        $details = [
-            "details" => $details,
-        ];
         return response()->json($details);
     }
 
