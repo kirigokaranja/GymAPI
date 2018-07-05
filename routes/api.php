@@ -48,5 +48,5 @@ Route::get('gym', 'GymInstructorsController@showgym');
 //show specific gym details
 Route::get('gym/{id}', 'GymInstructorsController@gymDetails');
 
-//update user profile
+//update user profile//
 Route::post('user/{id}', 'RegisterController@updateProfile');

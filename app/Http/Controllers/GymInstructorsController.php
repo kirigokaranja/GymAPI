@@ -97,10 +97,6 @@ class GymInstructorsController extends Controller
 
         $gym = GymDetail::where('id', $gym_id)->get();
 
-        $gym = [
-
-            "gym" => $gym,
-        ];
         return response()->json($gym);
 
     }
