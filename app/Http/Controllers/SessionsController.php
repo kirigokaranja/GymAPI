@@ -39,9 +39,6 @@ class SessionsController extends Controller
 
         $workout = Session::where('user_id', $user_id)->get();
 
-        $workout = [
-            "workout" => $workout,
-        ];
         return response()->json($workout);
 
     }
@@ -50,9 +47,6 @@ class SessionsController extends Controller
 
         $workout = Session::all();
 
-        $workout = [
-            "workout" => $workout,
-        ];
         return response()->json($workout);
     }
 }
