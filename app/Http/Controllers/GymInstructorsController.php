@@ -52,7 +52,8 @@ class GymInstructorsController extends Controller
         $instructor = GymInstructors::all();
 
         $instructor = [
-            "instructors" => $instructor,
+            
+            $instructor,
         ];
         return response()->json($instructor);
     }
