@@ -15,13 +15,12 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profile_95006', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('profilePhoto');
             $table->date('dob');
             $table->string('gender');
             $table->string('weight');
             $table->string('desired_weight');
             $table->string('height');
-            $table->integer('homegym');
+            $table->string('homegym');
             $table->unsignedInteger('user_id');
             $table->timestamps();
 

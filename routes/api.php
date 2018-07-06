@@ -24,6 +24,9 @@ Route::post('login', 'RegisterController@login');
 //retrieve user details
 Route::get('userDetails/{id}', 'RegisterController@getUserDetails');
 
+//retrieve user details
+Route::get('Profile/{id}', 'RegisterController@getprofileDetails');
+
 //show all gym instructor details
 Route::get('instructors', 'GymInstructorsController@instructorDetails');
 

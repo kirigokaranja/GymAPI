@@ -114,6 +114,12 @@ class RegisterController extends Controller
         return response()->json($user);
     }
 
+    public function getprofileDetails($userId){
+
+        $profile = Profile::find($userId);
+        return response()->json($Profile);
+    }
+
     public function updateProfile($userId){
 
         $profile = Profile::find($userId);
